@@ -22,3 +22,15 @@ inversa.
 [30,20,10]
 ```
 
+3. Apresente uma definição da função `def elem(a: Any, b: List[Any]) -> bool`
+que testa se um elemento existe numa lista.
+
+*Por exemplo:*
+
+```python
+>>> elem(20, [10, 20, 30])
+True
+>>> elem(2, [10, 20, 30])
+False
+```
+
