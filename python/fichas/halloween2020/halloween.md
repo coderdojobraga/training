@@ -1,4 +1,4 @@
-# Desafios de Halloween :jack_o_lantern:
+# Desafios de Halloween
 
 1. A *CoderBruxa* sai todos os anos à rua na noite de 31 de outubro para assustar as crianças que por lá andam. Este ano, como as crianças não podem andar em grupo à procura de doçuras, ela precisa de dividir o trabalho com o seu ajudante *DojoStein*. 
 A *CoderBruxa* tem uma lista enorme de nomes de crianças para assustar, e precisa da tua ajuda para dividir as crianças entre ela, e o seu ajudante. Decidiu que ela ficava encarregue de assustar as crianças que se encontram nas posições **pares** da lista. O *DojoStein* fica encarregue das restantes.
