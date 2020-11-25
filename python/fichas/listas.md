@@ -55,7 +55,7 @@ que, dada uma lista de inteiros, devolve uma nova lista que contém as somas acu
 
 ```python
 >>> somas_acumuladas([10, 20, 30])
-[10, 30, 50]
+[10, 30, 60]
 >>> somas_acumuladas([3, 3, 3])
 [3, 6, 9]
 >>> somas_acumuladas([1, 2, 3, 4])
