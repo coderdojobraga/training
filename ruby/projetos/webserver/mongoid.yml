@@ -1,0 +1,6 @@
+development:
+    clients:
+        default:
+            database: atwritter_api_dev 
+            hosts:
+                - localhost:27017 
