@@ -1,0 +1,162 @@
+--> gem install sinatra (para instalar a biblioteca sinatra do mesmo jeito que instalamos
+o ruby2d)
+
+--> Ex de app mais simples:
+
+require 'sinatra'
+
+get '/' do
+    'Hello from sinatra'
+end
+
+----------------------------------------------+----------------------------------------------------
+
+--> Organização da estrutura do código do app:
+
+1-) app.rb -> ficheiro mais conhecido como "main" ou "server", sendo o cérebro e centro de operações.
+
+
+----------------------------------------------+---------------------------------------------------
+
+--> Código do app.rb:
+
+require 'sinatra'
+
+get '/tweets' do
+    'Lista de Tweets!!!'
+end
+
+# Explicar que agora ao abrir o localhost sem identificar nenhuma rota dá erro, justamente
+porque apenas existe a rota 'tweets' e quando metemos apenas '/' quer dizer rota principal que
+por omissão é a que entramos logo de prima. Se meter /tweets logo após o localhost conseguimos
+acessar o que fizemos.
+
+# Explicar que por enquanto só conseguimos fazer modificações se dermos 'Ctrl C' no terminal e 
+reiniciar  servidor, mas isso não é nada produtivo...
+
+# Para corrigirmos a problematica anterior: 
+
+                            gem install sinatra-contrib
+
+Isto é uma extensão a biblioteca Sinatra: uma biblioteca dentro da biblioteca. Ela não
+faz parte oficialemente do kit original do Sinatra mas foi criada justamente para satisfazer
+a necessidade dos desenvolvedores.
+
+# Para invocar alguma das ferramentas do sinatra-contrib (alguma extensão/biblioteca dentro da
+extensão/biblioteca :) que instalamos basta fazer: (nesse caso queremos a ferramenta do reloader
+que corrige a problematica acima citada).
+
+require 'sinatra/contrib' # invoca todas as bibliotecas comuns (a reloader está incluída)
+
+                                        OU
+
+require 'sinatra/reloader' # para invocar apenas a reloader
+
+# Agora imagine que seu trabalho está ficando grande e você tem que mudar de pc sei lá e lá
+não tem as dependências (explicar esse conceito) que você tinha no seu para funcionar seus 'requires'...
+Para isso, vamos usar o Gemfile -> um arquivo que vamos colocar as dependências 
+conforme vamos baixando. Isso vai corrigir o problema citado pois (imagino - e com razão
+com o que será explicado mais tarde) que ele serve para
+verificar e baixar as dependências que está nele antes da execução para não haver falha.
+
+# Esse arquivo terá a seguinte estrutura:
+source 'https://rubygems.org'
+
+gem 'sinatra', '~> 2.1'
+gem 'sinatra-contrib', '~> 2.1'
+
+# Onde colocamos as diversas gems que estamos a utilizar (meter o sinatra-contrib já engloba
+as extensões comuns e por tanto não precisamos fazer específico para elas, como o caso do reloader). Podemos adicionar sua versão
+consultando o site https://rubygems.org/
+
+# Para usufruir da regalia que citamos anteriormente, temos de instalar o bundler:
+
+                                gem install bundler
+
+... Ao instalar ele, não metemos no Gemfile pois ele que serve para o Gemfile funcionar :). Usamos
+ele inserindo o comando:
+
+                                  bundler install 
+
+... Ao digitar isso será lido o ficheiro Gemfile, ele vai para o site que está em 'source', vai
+procurar pelas gems que metemos e vai instalar! Para além disso ele vai criar também o ficheiro
+Gemfile.lock com as dependências baixadas mais especificamente.
+
+# Para melhores práticas caso haver outras versões nas rotas (Estudar melhor depois)
+                            
+                            require 'sinatra/namespace'
+
+# Escrever:
+
+get '/api/v1/tweets' do
+    'Lista de Tweets!'
+end
+
+É O MESMO QUE:
+
+get ('/api/v1/tweets') {
+    'Lista de Tweets!!!!'
+}
+
+----------------------------------------------------------- . . .
+# Explicar conceito de banco de dados
+
+# Instalação do mongodb: https://www.youtube.com/watch?v=aYRkF7sHrbk (VIDEO)
+
+https://www.mongodb.com/try/download/community  -> baixa o instalador
+
+# Vou clicando NEXT e desmarco a opção(quando aparecer) de "install MongoD as a Service"
+
+# Não esquecer de criar a pasta "data -> db" caso não for criada(na pasta root)
+
+# Para executar "ruby app.rb" com o mongo devo executar o mongod simultaneamente
+
+------------------------------------------------------------ . . .
+
+# Configuração da aplicação com um banco de dados. Vamos trabalhar com o mongoDb, logo vamos
+trabalhar com documentos, que é a forma na qual a informação é guardada num banco de dados. No caso
+do mongo essa informação é guardada no formato JSON (acho eu). Por tanto precisamos de uma gem(biblioteca)
+que saiba trabalhar bem com a abstração do banco de dados.
+Essa gem se chama "mogoid". Para baixá-la agora, usufruiremos da nossa nova técnica de ir no rubygems.org, procurar
+pela gem e metê-la no ficheiro Gemfile :) depois ao usar o bundler a biblioteca será baixada diretamente.
+Após adiocionar o "gem 'mongoid', '~> 7.2'" no arquivo Gemfile, basta rodar 'bundler install' no terminal e pronto :)
+
+# Agora vamos criar no nosso projeto um arquivo de configuração do banco de dados, para inserir coisas como
+o nome do banco de dados, endereço que ele está, etc... Para isso vamos inserir o seguinte excerto de código
+no ficheiro "mongoid.config" criado:
+
+development:
+    clients:
+        default:
+            database: atwritter_api_dev # nome do banco de dados
+            hosts:
+                -localhost:27017 # local que o banco de dados vai rodar
+
+# Vamos agora para nosso arquivo app.ruby e adicionamos:
+
+                            require 'mongoid'
+
+... e para além disso 
+
+                        Mongoid.load! 'mongoid.config'
+
+... Para o Mongoid usar as definições de configuramos que acabamos de definir. Agora estamos em condição de usar
+o mongid :)
+
+# Vamos agora usufruir de nosso banco de dados, e criar uma forma de "representação de informação"
+que será guardada nele na forma de uma 'classe':
+(conteúdo a ser inserido logo após a linha "Mongoid.load! 'mongoid.config'" do ficheiro app.rb)
+
+class Atweet
+        include Mongoid :: Document  # include dessa classe Document que permite usar coisas fixes(não sei ainda :))
+        include MOngoid :: Timestamps # include dessa classe Timestamps(no momento que fazemos um post ou atualizamos já será incluido os campos "created ate" e "updated at" automaticamente em nosso documento de infomração indicando as horas) 
+
+        field :author, type: String, default "ANON"
+        field :content, type: String
+        field :image, type: String
+        field :tags, type: Array, default: []
+        field :likes, type: Integer, default: 0
+end
+
+-> Fazer brincadeirinha no irb (explicar o que é um intepretador de comandos)
+-> Mostrar que se eu tentar salvar no banco de dados sem executar o mongod, dá erro!
