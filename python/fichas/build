@@ -1,7 +1,9 @@
 #!/usr/bin/env python
-from inspect import cleandoc, getmembers, isfunction, signature
+import os
 
-import listas
+from glob import glob
+from importlib import import_module
+from inspect import cleandoc, getmembers, isfunction, signature
 
 
 def uncapitalize(s):
@@ -15,9 +17,11 @@ def get_markdown(module):
 
     blocks = [intro]
 
-    for name, func in getmembers(module, isfunction):
-        definition = f"Apresente um definição da função `{name}{signature(func)}` que "
-        definition += uncapitalize(cleandoc(func.__doc__))
+    for i, (name, func) in enumerate(getmembers(module, isfunction), start=1):
+        definition = f"{i}. Apresente um definição da função `{name}{signature(func)}` que "
+        doc = cleandoc(func.__doc__)
+        [fst, snd] = doc.split(">>>", maxsplit=1)
+        definition += uncapitalize(fst) + '```python\n>>>' + snd + '\n```'
 
         blocks.append(definition)
 
@@ -25,7 +29,13 @@ def get_markdown(module):
 
 
 def main():
-    print(get_markdown(listas))
+    os.makedirs("output", exist_ok=True)
+
+    for file in glob("*.py"):
+        module = import_module(file[:-3])
+        with open(f"output/{file[:-3]}.md", "w") as md:
+            markdown = get_markdown(module)
+            md.write(markdown)
 
 
 if __name__ == '__main__':

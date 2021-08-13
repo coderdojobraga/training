@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 """
-Questões sobre Listas
-=====================
+# Ficha x: Questões sobre Listas
 
 As listas são usadas para armazenar vários elementos numa única variável.
 Fazendo parte de uma das 4 estruturas de dados built-in na linguagem Python
@@ -14,8 +13,7 @@ def enum_from_to(a: int, b: int) -> list[int]:
     """
     Constrói a lista dos números inteiros compreendidos entre dois limites.
 
-    Exemplos
-    --------
+    _Exemplos_
 
     >>> enum_from_to(1, 5)
     [1, 2, 3, 4, 5]
@@ -37,8 +35,7 @@ def reverse(a: list) -> list:
     """
     Calcula a lista inversa.
 
-    Exemplos
-    --------
+    _Exemplos_
 
     >>> reverse([10, 20, 30])
     [30, 20, 10]
@@ -64,8 +61,7 @@ def is_elem(elem, values: list) -> bool:
     """
     Verifica se um elemento existe numa lista.
 
-    Exemplos
-    --------
+    _Exemplos_
 
     >>> is_elem(20, [10, 20, 30])
     True
@@ -83,8 +79,7 @@ def maximum(values: list[int]) -> int:
     """
     Retorna o valor máximo.
 
-    Exemplos
-    --------
+    _Exemplos_
 
     >>> maximum([50, 20, 30])
     50
@@ -108,8 +103,7 @@ def sums(values: list[int]) -> list[int]:
     """
     Calcula as somas acumuladas.
 
-    Exemplos
-    --------
+    _Exemplos_
 
     >>> sums([10, 20, 30])
     [10, 30, 60]
@@ -128,3 +122,8 @@ def sums(values: list[int]) -> list[int]:
         results.append(aux)
 
     return results
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
