@@ -3,6 +3,12 @@
 # Ficha x: Programação Funcional em Python
 
 ## Recursividade
+
+A programação funcional resolve problemas pela composição de funções.
+Idealmente, as funções apenas recebem entradas e produzem saídas, e não têm
+nenhum estado interno que afete a saída produzida para uma determinada entrada.
+As linguagens funcionais mais conhecidas incluem linguagens, tais como,
+Haskell, OCaml, F# e Elixir.
 """
 
 
@@ -37,6 +43,8 @@ def fib(n: int) -> int:
     normalmente por 0 e 1, na qual cada termo subsequente corresponde à soma
     dos dois anteriores.
 
+    ---
+
     ![Ilustração representativa da série de Fibonacci, demonstrando o
     crescimento populacional de coelhos (carregando ovos de
     páscoa)](https://upload.wikimedia.org/wikipedia/commons/7/7a/FibonacciRabbit.svg){width=200}
@@ -44,6 +52,8 @@ def fib(n: int) -> int:
     Esta sequência foi utilizada pelo matemático italiano Leonardo de Pisa,
     mais conhecido por Fibonacci, para descrever o crescimento de uma população
     de coelhos a partir desta.
+
+    ---
 
     _Exemplos_
 
