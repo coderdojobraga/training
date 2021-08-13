@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+from inspect import cleandoc, getmembers, isfunction, signature
+
+import listas
+
+
+def uncapitalize(s):
+    if len(s) > 0:
+        s = s[0].lower() + s[1:]
+    return s
+
+
+def get_markdown(module):
+    intro = cleandoc(module.__doc__)
+
+    blocks = [intro]
+
+    for name, func in getmembers(module, isfunction):
+        definition = f"Apresente um definição da função `{name}{signature(func)}` que "
+        definition += uncapitalize(cleandoc(func.__doc__))
+
+        blocks.append(definition)
+
+    return '\n\n'.join(blocks)
+
+
+def main():
+    print(get_markdown(listas))
+
+
+if __name__ == '__main__':
+    main()
