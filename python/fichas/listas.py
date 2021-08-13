@@ -31,7 +31,7 @@ def enum_from_to(a: int, b: int) -> list[int]:
     return result
 
 
-def reverse(a: list) -> list:
+def reverse(elems: list) -> list:
     """
     Calcula a lista inversa.
 
@@ -48,10 +48,10 @@ def reverse(a: list) -> list:
     """
     result = []
 
-    i = len(a) - 1
+    i = len(elems) - 1
 
     while not i < 0:
-        result.append(a[i])
+        result.append(elems[i])
         i -= 1
 
     return result
