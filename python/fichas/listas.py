@@ -9,7 +9,7 @@ Conjunto, o Túplo e o Dicionário.
 """
 
 
-def enum_from_to(a: int, b: int) -> list[int]:
+def enum_from_to(start: int, end: int) -> list[int]:
     """
     Constrói a lista dos números inteiros compreendidos entre dois limites.
 
@@ -22,9 +22,9 @@ def enum_from_to(a: int, b: int) -> list[int]:
     """
     result = []
 
-    i = a
+    i = start
 
-    while i <= b:
+    while i <= end:
         result.append(i)
         i = i + 1
 

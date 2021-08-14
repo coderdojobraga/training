@@ -5,9 +5,11 @@
 Strings em Python colocam-se entre aspas simples ou aspas duplas. `'hello'` é o
 mesmo que `"hello"`.
 
-Tal como em muitas outras linguagens de programação, as strings em Python são arrays de bytes que representam caracteres Unicode.
+Tal como em muitas outras linguagens de programação, as strings em Python são
+arrays de bytes que representam caracteres Unicode.
 
-No entanto, em Python não existe o tipo caractere, um único caractere é simplesmente uma string com o comprimento 1.
+No entanto, em Python não existe o tipo caractere, um único caractere é
+simplesmente uma string com o comprimento 1.
 """
 
 
