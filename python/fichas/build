@@ -16,8 +16,9 @@ def get_markdown(module):
     intro = cleandoc(module.__doc__)
 
     blocks = [intro]
+    functions = [(k, v) for k, v in vars(module).items() if isfunction(v)]
 
-    for i, (name, func) in enumerate(getmembers(module, isfunction), start=1):
+    for i, (name, func) in enumerate(functions, start=1):
         definition = f"{i}. Apresente um definição da função `{name}{signature(func)}` que "
         doc = cleandoc(func.__doc__)
         [fst, snd] = doc.split(">>>", maxsplit=1)
