@@ -13,7 +13,7 @@ def traducoes(d:dict)-> list:
     Imagine um dicionário em que há a tradução literal das palavras usadas como chave nos valores.
     Determine uma função que devolve a lista das palavras traduzidas em ordem alfabética.
 
-    Exemplos:
+    _Exemplos_
 
     >>> my_dict = { "azul":"blue",
                     "amarelo":"yellow",
