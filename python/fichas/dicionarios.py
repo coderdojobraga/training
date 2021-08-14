@@ -3,8 +3,8 @@
 # Ficha x: Questões sobre Dicionários
 
 Assim como as listas, os Dicionários são usados para armazenar dados em uma única variável.
-Entretanto, a sua diferença se encontra principalmente nos índices e nos seus métodos:
-Uma lista possui int's como índice, enquanto um dicionário possui quase qualquer tipo de dado.
+No entanto, a sua diferença encontra-se principalmente nos índices e nos seus métodos:
+Uma lista possui int's como índice, enquanto que um dicionário possui quase qualquer tipo de dados.
 Os dicionários possuem o que chamamos de chaves (keys) e valores (values) para fazer a associação.
 """
 
