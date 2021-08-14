@@ -35,7 +35,7 @@ def quadrados(n:int)->dict:
     Defina uma função que construa um dicionário onde os valores são os quadrados das chaves.
     Se conta seria de 1 até o 'n'.
 
-    Exemplos:
+    _Exemplos_
 
     >>> quadrados(3)
     {1:1, 2:4, 3:9}
