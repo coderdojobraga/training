@@ -11,7 +11,7 @@ Os dicionários possuem o que chamamos de chaves (keys) e valores (values) para 
 def traducoes(d:dict)-> list:
     """
     Imagine um dicionário em que há a tradução literal das palavras usadas como chave nos valores.
-    Determine uma função que devolve a lista das palavras traduzidas em ordem alfabética.
+    Define uma função que devolve a lista das palavras traduzidas por ordem alfabética.
 
     _Exemplos_
 
