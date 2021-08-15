@@ -13,7 +13,7 @@ Haskell, OCaml, F# e Elixir.
 
 
 def fact(n: int) -> int:
-    r""" #Found this 'r', is it necessary?
+    r"""
     Calcula o produto de todos os número naturais menores ou iguais a `n`. Em
     matemática costuma-se representar por $n!$. Este operador chama-se
     factorial e define-se assim:

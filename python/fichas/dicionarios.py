@@ -8,10 +8,12 @@ Uma lista possui int's como índice, enquanto que um dicionário possui quase qu
 Os dicionários possuem o que chamamos de chaves (keys) e valores (values) para fazer a associação.
 """
 
-def traducoes(d:dict)-> list:
+
+def traducoes(d: dict) -> list:
     """
-    Imagine um dicionário em que há a tradução literal das palavras usadas como chave nos valores.
-    Define uma função que devolve a lista das palavras traduzidas por ordem alfabética.
+    Apresente uma definição da função traducoes(d: dict) -> list: que dado um Dicionário
+    com Strings como Chaves e seus respetivos Valores sendo as traduções de cada, devolve
+    uma lista em ordem alfabética com as traduções.
 
     _Exemplos_
 
@@ -23,14 +25,13 @@ def traducoes(d:dict)-> list:
     ["blue", "red", "yellow"]
     """
 
-    my_dict = { "azul":"blue",
-                    "amarelo":"yellow",
-                    "vermelho":"red"}
+    my_dict = {"azul": "blue", "amarelo": "yellow", "vermelho": "red"}
 
     traducao = list(my_dict.values()).sort()
     return traducao
 
-def quadrados(n:int)->dict:
+
+def quadrados(n: int) -> dict:
     """
     Defina uma função que construa um dicionário onde os valores são os quadrados das chaves.
     Se conta seria de 1 até o 'n'.
@@ -44,6 +45,6 @@ def quadrados(n:int)->dict:
     dic = dict()
     i = 1
     while i <= n:
-        dic[i] = i ** 2
+        dic[i] = i**2
         i += 1
     return dic

@@ -9,7 +9,7 @@ Conjunto, o Túplo e o Dicionário.
 """
 
 
-def enum_from_to(start: int, end: int) -> list[int]:
+def enum_from_to(start: int, end: int) -> list:
     """
     Constrói a lista dos números inteiros compreendidos entre dois limites.
 
@@ -75,7 +75,7 @@ def is_elem(elem, values: list) -> bool:
     return False
 
 
-def maximum(values: list[int]) -> int:
+def maximum(values: list) -> int:
     """
     Retorna o valor máximo.
 
@@ -99,7 +99,7 @@ def maximum(values: list[int]) -> int:
     return result
 
 
-def sums(values: list[int]) -> list[int]:
+def sums(values: list) -> list:
     """
     Calcula as somas acumuladas.
 
