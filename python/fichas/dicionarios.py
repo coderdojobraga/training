@@ -11,7 +11,7 @@ Os dicionários possuem o que chamamos de chaves (keys) e valores (values) para 
 
 def traducoes(d: dict) -> list:
     """
-    Apresente uma definição da função traducoes(d: dict) -> list: que dado um Dicionário
+    Dado um Dicionário
     com Strings como Chaves e seus respetivos Valores sendo as traduções de cada, devolve
     uma lista em ordem alfabética com as traduções.
 
