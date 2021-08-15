@@ -33,7 +33,7 @@ def traducoes(d: dict) -> list:
 
 def quadrados(n: int) -> dict:
     """
-    Defina uma função que construa um dicionário onde os valores são os quadrados das chaves.
+    Constrói um dicionário onde os valores são os quadrados das chaves.
     Se conta seria de 1 até o 'n'.
 
     _Exemplos_
