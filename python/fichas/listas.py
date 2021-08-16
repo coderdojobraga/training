@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 # Ficha x: Questões sobre Listas
 
@@ -8,8 +8,9 @@ utilizadas para guardar coleções de dados. As restantes estruturas são o
 Conjunto, o Túplo e o Dicionário.
 """
 
+from typing import List
 
-def enum_from_to(start: int, end: int) -> list:
+def enum_from_to(start: int, end: int) -> List[int]:
     """
     Constrói a lista dos números inteiros compreendidos entre dois limites.
 
@@ -75,7 +76,7 @@ def is_elem(elem, values: list) -> bool:
     return False
 
 
-def maximum(values: list) -> int:
+def maximum(values: List[int]) -> int:
     """
     Retorna o valor máximo.
 
@@ -99,7 +100,7 @@ def maximum(values: list) -> int:
     return result
 
 
-def sums(values: list) -> list:
+def sums(values: List[int]) -> List[int]:
     """
     Calcula as somas acumuladas.
 
@@ -122,7 +123,6 @@ def sums(values: list) -> list:
         results.append(aux)
 
     return results
-
 
 if __name__ == '__main__':
     import doctest
