@@ -17,17 +17,19 @@ def traducoes(d: dict) -> list:
 
     _Exemplos_
 
-    >>> my_dict = { "azul":"blue",
-                    "amarelo":"yellow",
-                    "vermelho":"red"}
+    >>> colors = {"azul":"blue", "amarelo":"yellow", "vermelho":"red"}
 
-    >>> traducoes(my_dict)
-    ["blue", "red", "yellow"]
+    >>> traducoes(colors)
+    ['blue', 'red', 'yellow']
+
+    >>> numbers ={"one":"uno", "two":"dos", "three":"tres"}
+
+    >>> traducoes(numbers)
+    ['dos', 'tres', 'uno']
     """
 
-    my_dict = {"azul": "blue", "amarelo": "yellow", "vermelho": "red"}
-
-    traducao = list(my_dict.values()).sort()
+    traducao = list(d.values())
+    traducao.sort()
     return traducao
 
 
@@ -39,7 +41,10 @@ def quadrados(n: int) -> dict:
     _Exemplos_
 
     >>> quadrados(3)
-    {1:1, 2:4, 3:9}
+    {1: 1, 2: 4, 3: 9}
+
+    >>> quadrados(0)
+    {}
     """
 
     dic = dict()
@@ -48,3 +53,8 @@ def quadrados(n: int) -> dict:
         dic[i] = i**2
         i += 1
     return dic
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
