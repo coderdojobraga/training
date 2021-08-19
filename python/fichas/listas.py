@@ -8,7 +8,6 @@ utilizadas para guardar coleções de dados. As restantes estruturas são o
 Conjunto, o Túplo e o Dicionário.
 """
 
-
 def enum_from_to(start: int, end: int) -> list[int]:
     """
     Constrói a lista dos números inteiros compreendidos entre dois limites.
@@ -122,7 +121,6 @@ def sums(values: list[int]) -> list[int]:
         results.append(aux)
 
     return results
-
 
 if __name__ == '__main__':
     import doctest
