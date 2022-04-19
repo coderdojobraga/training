@@ -1,8 +1,8 @@
-# Nível: TBD
+# Verde
 
 **Linguagem de programação:** Python 🐍
 
-**Ambiente de programação:** TBD
+**Ambiente de programação:** [**Repl**](http://repl.it)
 
 # Projeto
 
@@ -10,7 +10,7 @@
 
 ### Wordle
 
-O projeto consiste numa implementação textual (ou gráfica, TBD) do jogo [**Wordle**](https://www.nytimes.com/games/wordle/index.html).
+O projeto consiste numa implementação textual do jogo [**Wordle**](https://www.nytimes.com/games/wordle/index.html).
 
 ### Âmbito
 
