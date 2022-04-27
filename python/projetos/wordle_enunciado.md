@@ -14,7 +14,12 @@ O projeto consiste numa implementação textual do jogo [**Wordle**](https://www
 
 ### Âmbito
 
-TBD
+O Ninja deve saber fazer:
+
+- Condicionais
+- Ciclos
+- Manipulação de listas
+- Manipulação de ficheiros (bónus #2)
 
 ### Implementação
 
