@@ -2,7 +2,7 @@
 ## 1. Introdução
 Este projeto consiste na implementação de um conjunto de tarefas, abaixo introduzidas, de forma a recriarmos o jogo **[wordle](https://www.nytimes.com/games/wordle/index.html)** do The New York Times.
 
-Versão PT-PT: [palavra do dia](https://palavra-do-dia.pt)#
+Versão PT-PT: [palavra do dia](https://palavra-do-dia.pt)
 
 #### Como jogar:
 **Objetivo:** Adivinhar a palavra em 6 tentativas.
@@ -11,10 +11,12 @@ Versão PT-PT: [palavra do dia](https://palavra-do-dia.pt)#
 - Cada tentativa deve ser uma palavra válida com 5 letras.
 - Depois de cada tentativa submetida, os blocos mudam de cor para mostrar o quão perto estás de adivinhar a palavra.
  
+ 
  Exemplo:
  - O W pertence à palavra e está na posição correta
  - O I pertence à palavra mas está na posição errada
  - O U não pertence à palavra 
+
 
 Exemplo de jogada real:
 
