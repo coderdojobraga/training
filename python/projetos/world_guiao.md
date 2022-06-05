@@ -1,4 +1,4 @@
-# [Worlde](https://www.nytimes.com/games/wordle/index.html)
+# [Wordle](https://www.nytimes.com/games/wordle/index.html)
 ## 1. Introdução
 Este projeto consiste na implementação de um conjunto de tarefas, abaixo introduzidas, de forma a recriarmos o jogo **[wordle](https://www.nytimes.com/games/wordle/index.html)** do The New York Times.
 
